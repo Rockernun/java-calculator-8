@@ -25,6 +25,22 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
+    void 단일_구분자_사용() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("//;&\\n"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    void 정수형_사용() {
+        assertSimpleTest(() ->
+            assertThatThrownBy(() -> runException("e,1,b,2"))
+                    .isInstanceOf(NumberFormatException.class)
+        );
+    }
+
+    @Test
     void 예외_테스트() {
         assertSimpleTest(() ->
             assertThatThrownBy(() -> runException("-1,2,3"))
