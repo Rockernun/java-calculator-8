@@ -19,8 +19,7 @@ public class CalculatorController {
     public void calculate() {
         output.printInputString();
         String source = input.input();
-        inputString.parseNumbers(source);
-        int result = inputString.getResult();
+        int result = inputString.getResult(source);
         output.printResult(result);
     }
 }
