@@ -12,6 +12,6 @@ public class Application {
         InputString inputString = new InputString();
 
         CalculatorController controller = new CalculatorController(input, output, inputString);
-        controller.calculate();
+        controller.run();
     }
 }
