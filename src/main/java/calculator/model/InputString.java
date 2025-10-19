@@ -42,7 +42,9 @@ public class InputString {
 
         for (String s : substring.split(regex)) {
             String trim = s.trim();
-            if (trim.isEmpty()) continue;
+            if (trim.isEmpty()) {
+                continue;
+            }
             try {
                 int number = Integer.parseInt(s);
                 numberList.add(number);
