@@ -17,9 +17,6 @@ public class CalculatorController {
     }
 
     public void run() {
-        output.printInputString();
-        String source = input.input();
-        int result = inputString.getResult(source);
-        output.printResult(result);
+        output.printResult(inputString.getResult(input.input()));
     }
 }
